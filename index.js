@@ -33,9 +33,14 @@ app.engine('hbs', exphbs.engine({
 
 app.set('view engine', 'hbs');
 
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+console.log(`Server started at port ${port}`)
+});
+/*
 app.listen(3000, () => {
     console.log("server started at port 3000")
 });
-
+*/
 app.use('/router', routes_controller);
 
